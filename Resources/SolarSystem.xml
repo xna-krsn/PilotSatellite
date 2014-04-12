@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<Solar_system id="197" slug="solar-system" mass_order="24" area_order="6" distance_order="6">
+	<link>
+		http://solarsystem.nasa.gov/planets/profile.cfm?Object=SolarSys
+		<!--http://nssdc.gsfc.nasa.gov/planetary/factsheet/!-->
+	</link>
+	<Sun id="79" slug="sun">
+		<radius>695508</radius>
+		<surface_area>6078747</surface_area>
+		<mass>1989100</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Sun
+		</link>
+	</Sun>
+	<Mercury id="377" slug="mercury">
+		<distance>57.9</distance>
+		<radius>2439.7</radius>
+		<surface_area>74.8</surface_area>
+		<mass>0.330</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mercury
+		</link>
+	</Mercury>
+	<Venus id="379" slug="venus">
+		<distance>108.2</distance>
+		<radius>6051.8</radius>
+		<surface_area>460</surface_area>
+		<mass>4.87</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Venus
+		</link>
+	</Venus>
+	<Earth id="380" slug="earth">
+		<distance>149.6</distance>
+		<radius>6371</radius>
+		<surface_area>510</surface_area>
+		<mass>5.97</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Earth
+		</link>
+		<satellite>
+			<Moon id="185" slug="moon">				
+				<distance>0.384</distance>
+				<radius>1737.1</radius>
+				<surface_area>37.9</surface_area>
+				<mass>0.073</mass>
+				<link>
+					http://solarsystem.nasa.gov/planets/profile.cfm?Object=Moon
+				</link>
+			</Moon>
+		</satellite>
+	</Earth>
+	<Mars id="375" slug="mars">
+		<distance>227.9</distance>
+		<radius>3389.5</radius>
+		<surface_area>144.8</surface_area>
+		<mass>0.642</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mars
+		</link>
+		<satellite>
+			<Phobos>				
+				<distance>9.376</distance>
+				<radius>11.1</radius>
+				<surface_area>0.001548</surface_area>
+				<mass>0.0000000106</mass>
+				<link>
+					http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mar_Phobos
+				</link>
+			</Phobos>
+			<Deimos>				
+				<distance>23.46</distance>
+				<radius>6.2</radius>
+				<surface_area>0.000483</surface_area>
+				<mass>0.00000000147</mass>
+				<link>
+					http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mar_Deimos
+				</link>
+			</Deimos>
+		</satellite>
+	</Mars>
+	<Jupiter id="381" slug="jupiter">
+		<distance>778.6</distance>
+		<radius>69911</radius>
+		<surface_area>61418.7</surface_area>
+		<mass>1898</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Jupiter
+		</link>
+	</Jupiter>
+	<Saturn id="382" slug="saturn">
+		<distance>1433.5</distance>
+		<radius>58232</radius>
+		<surface_area>42612</surface_area>
+		<mass>568</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Saturn
+		</link>
+	</Saturn>
+	<Uranus id="383" slug="uranus">
+		<distance>2872.5</distance>
+		<radius>25362</radius>
+		<surface_area>8083</surface_area>
+		<mass>86.8</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Uranus
+		</link>
+	</Uranus>
+	<Neptune id="384" slug="neptune">
+		<distance>4495.1</distance>
+		<radius>24622</radius>
+		<surface_area>7618</surface_area>
+		<mass>102</mass>
+		<link>
+			http://solarsystem.nasa.gov/planets/profile.cfm?Object=Neptune
+		</link>
+	</Neptune>
+</Solar_system>
