@@ -235,3 +235,7 @@ PilotSatellite-csharp.sln
 PilotSatellite.sln
 
 PilotSatellite.userprefs
+
+Assembly-CSharp-vs.csproj
+
+Assembly-CSharp.csproj
