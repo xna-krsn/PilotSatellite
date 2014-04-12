@@ -57,7 +57,6 @@ build/
 *_i.c
 *_p.c
 *.ilk
-*.meta
 *.obj
 *.pch
 *.pdb
@@ -230,3 +229,9 @@ Library/metadata
 Library/previews
 Library/guidmapper
 Temp
+
+PilotSatellite-csharp.sln
+
+PilotSatellite.sln
+
+PilotSatellite.userprefs
