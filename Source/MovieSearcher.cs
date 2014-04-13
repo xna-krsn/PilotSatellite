@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Newtonsoft;
-using System.Net;
-using System.IO;
 
 namespace DataProvider
 {
@@ -49,21 +46,7 @@ namespace DataProvider
 
         public static List<MovieData> SearchMovies(string param)
         {
-            HttpWebRequest request = null;
-            HttpWebResponse response = null;
-            StreamReader readStream = null;
-            try
-            {
-                request = (HttpWebRequest)WebRequest.Create(GetRequestString(param));
-                response = (HttpWebResponse)request.GetResponse();
-                readStream = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-                return GetFoundMovies(readStream.ReadToEnd());
-            }
-            finally
-            {
-                readStream.Close();
-                response.Close();
-            }
+            return GetFoundMovies(HttpRequestHelper.GetDataFromUrl(GetRequestString(param)));
         }
     }
 }
