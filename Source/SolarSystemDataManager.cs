@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml;
-using System.Threading.Tasks;
 
-namespace TricubicalExtrapolation
+namespace DataManager
 {
     class NasaDataKey
     {
@@ -32,35 +29,40 @@ namespace TricubicalExtrapolation
 
     class SolarSystemDataManager
     {
+        public SolarSystemDataManager()
+        {
+            LoadFromXml("SolarSystemData.xml");
+        }
+
         public Dictionary<string, NasaDataKey> GetNasaKeys()
         {
-            return Keys;
+            return _keys;
         }
 
         public KeyValuePair<string, CelestialBodyCharacteristics> GetCelestialBodyCharacteristics()
         {
-            return ContainingObject;
+            return _containingObject;
         }
 
         public CharacteristicOrders GetCharacteristicOrders()
         {
-            return Orders;
+            return _orders;
         }
 
-        public void LoadFromXml(string FileName)
+        private void LoadFromXml(string FileName)
         {
             XmlDocument doc = new XmlDocument();
             doc.PreserveWhitespace = false;
             doc.Load(FileName);
 
-            Orders = new CharacteristicOrders();
-            LoadOrdersFromXml(doc.DocumentElement, ref Orders);
+            _orders = new CharacteristicOrders();
+            LoadOrdersFromXml(doc.DocumentElement, ref _orders);
 
             CelestialBodyCharacteristics Object = new CelestialBodyCharacteristics();
             LoadObjectFromXml(doc.DocumentElement, ref Object);
-            ContainingObject = new KeyValuePair<string,CelestialBodyCharacteristics>(doc.DocumentElement.Name, Object);
+            _containingObject = new KeyValuePair<string,CelestialBodyCharacteristics>(doc.DocumentElement.Name, Object);
 
-            Keys = new Dictionary<string, NasaDataKey>();
+            _keys = new Dictionary<string, NasaDataKey>();
             LoadKeysFromXml(doc.DocumentElement);       
         }
 
@@ -111,15 +113,15 @@ namespace TricubicalExtrapolation
             if (element.HasAttribute("slug"))
                 key.Slug = element.Attributes["slug"].Value;
 
-            Keys.Add(element.Name, key);
+            _keys.Add(element.Name, key);
 
             if (null != element.SelectSingleNode("subobjects"))
                 foreach (XmlElement child in element.SelectSingleNode("subobjects").ChildNodes)
                     LoadKeysFromXml(child);
         }
 
-        private CharacteristicOrders Orders;
-        private Dictionary<string, NasaDataKey> Keys;
-        private KeyValuePair<string, CelestialBodyCharacteristics> ContainingObject;
+        private CharacteristicOrders _orders;
+        private Dictionary<string, NasaDataKey> _keys;
+        private KeyValuePair<string, CelestialBodyCharacteristics> _containingObject;
     }
 }
