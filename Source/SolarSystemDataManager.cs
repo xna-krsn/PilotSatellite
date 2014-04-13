@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml;
 
-namespace DataManager
+namespace DataManagement
 {
     public class NasaDataKey
     {
@@ -31,7 +30,7 @@ namespace DataManager
     {
         public SolarSystemDataManager()
         {
-            LoadFromXml("SolarSystemData.xml");
+            LoadFromXml("Recources\\SolarSystemData.xml");
         }
 
         public Dictionary<string, NasaDataKey> GetNasaKeys()
@@ -49,16 +48,15 @@ namespace DataManager
             return _orders;
         }
 
-        private void LoadFromXml(string FileName)
+        private void LoadFromXml(string fileName)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.PreserveWhitespace = false;
-            doc.Load(FileName);
+            var doc = new XmlDocument {PreserveWhitespace = false};
+            doc.Load(fileName);
 
             _orders = new CharacteristicOrders();
             LoadOrdersFromXml(doc.DocumentElement, ref _orders);
 
-            CelestialBodyCharacteristics Object = new CelestialBodyCharacteristics();
+            var Object = new CelestialBodyCharacteristics();
             LoadObjectFromXml(doc.DocumentElement, ref Object);
             _containingObject = new KeyValuePair<string,CelestialBodyCharacteristics>(doc.DocumentElement.Name, Object);
 
@@ -89,7 +87,7 @@ namespace DataManager
                     case "subobjects":
                         foreach (XmlElement subobject in node.ChildNodes)
                         {
-                            CelestialBodyCharacteristics characteristics = new CelestialBodyCharacteristics();
+                            var characteristics = new CelestialBodyCharacteristics();
                             LoadObjectFromXml(subobject, ref characteristics);
                             Body.Subobjects.Add(subobject.Name, characteristics);
                         }
@@ -106,7 +104,7 @@ namespace DataManager
 
         private void LoadKeysFromXml(XmlElement element)
         {  
-            NasaDataKey key = new NasaDataKey();
+            var key = new NasaDataKey();
             if (element.HasAttribute("id"))
                 key.Id = element.Attributes["id"].Value;
 
