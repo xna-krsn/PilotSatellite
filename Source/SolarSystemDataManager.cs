@@ -30,7 +30,7 @@ namespace DataManagement
     {
         public SolarSystemDataManager()
         {
-            LoadFromXml("Recources\\SolarSystemData.xml");
+            LoadFromXml("Resources\\SolarSystemData.xml");
         }
 
         public Dictionary<string, NasaDataKey> GetNasaKeys()
@@ -58,7 +58,7 @@ namespace DataManagement
 
             var Object = new CelestialBodyCharacteristics();
             LoadObjectFromXml(doc.DocumentElement, ref Object);
-            _containingObject = new KeyValuePair<string,CelestialBodyCharacteristics>(doc.DocumentElement.Name, Object);
+            _containingObject = new KeyValuePair<string, CelestialBodyCharacteristics>(doc.DocumentElement.Attributes["name"].Value, Object);
 
             _keys = new Dictionary<string, NasaDataKey>();
             LoadKeysFromXml(doc.DocumentElement);       
@@ -89,7 +89,7 @@ namespace DataManagement
                         {
                             var characteristics = new CelestialBodyCharacteristics();
                             LoadObjectFromXml(subobject, ref characteristics);
-                            Body.Subobjects.Add(subobject.Name, characteristics);
+                            Body.Subobjects.Add(subobject.Attributes["name"].Value, characteristics);
                         }
                         break;
                 } 
@@ -111,7 +111,7 @@ namespace DataManagement
             if (element.HasAttribute("slug"))
                 key.Slug = element.Attributes["slug"].Value;
 
-            _keys.Add(element.Name, key);
+            _keys.Add(element.Attributes["name"].Value, key);
 
             if (null != element.SelectSingleNode("subobjects"))
                 foreach (XmlElement child in element.SelectSingleNode("subobjects").ChildNodes)

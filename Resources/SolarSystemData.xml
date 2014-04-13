@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<Solar_system id="197" slug="solar-system" mass_order="24" area_order="6" distance_order="6">
+<solar_system id="197" slug="solar-system" name="Solar system" mass_order="24" area_order="6" distance_order="6">
 	<link>
 		http://solarsystem.nasa.gov/planets/profile.cfm?Object=SolarSys
 		<!--http://nssdc.gsfc.nasa.gov/planetary/factsheet/!-->
 	</link>
 	<subobjects>
-		<Sun id="79" slug="sun">
+		<star id="79" slug="sun" name="Sun">
 			<radius>695508</radius>
 			<surface_area>6078747</surface_area>
 			<mass>1989100</mass>
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Sun
 			</link>
-		</Sun>
-		<Mercury id="377" slug="mercury">
+		</star>
+		<planet id="377" slug="mercury" name="Mercury">
 			<distance>57.9</distance>
 			<radius>2439.7</radius>
 			<surface_area>74.8</surface_area>
@@ -21,8 +21,8 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mercury
 			</link>
-		</Mercury>
-		<Venus id="379" slug="venus">
+		</planet>
+		<planet id="379" slug="venus" name="Venus">
 			<distance>108.2</distance>
 			<radius>6051.8</radius>
 			<surface_area>460</surface_area>
@@ -30,8 +30,8 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Venus
 			</link>
-		</Venus>
-		<Earth id="380" slug="earth">
+		</planet>
+		<planet id="380" slug="earth" name="Earth">
 			<distance>149.6</distance>
 			<radius>6371</radius>
 			<surface_area>510</surface_area>
@@ -40,7 +40,7 @@
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Earth
 			</link>
 			<subobjects>
-				<Moon id="185" slug="moon">				
+				<satellite id="185" slug="moon" name="Moon">				
 					<distance>0.384</distance>
 					<radius>1737.1</radius>
 					<surface_area>37.9</surface_area>
@@ -48,10 +48,10 @@
 					<link>
 						http://solarsystem.nasa.gov/planets/profile.cfm?Object=Moon
 					</link>
-				</Moon>
+				</satellite>
 			</subobjects>
-		</Earth>
-		<Mars id="375" slug="mars">
+		</planet>
+		<planet id="375" slug="mars" name="Mars">
 			<distance>227.9</distance>
 			<radius>3389.5</radius>
 			<surface_area>144.8</surface_area>
@@ -60,7 +60,7 @@
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mars
 			</link>
 			<subobjects>
-				<Phobos>				
+				<satellite name="Phobos">				
 					<distance>9.376</distance>
 					<radius>11.1</radius>
 					<surface_area>0.001548</surface_area>
@@ -68,8 +68,8 @@
 					<link>
 						http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mar_Phobos
 					</link>
-				</Phobos>
-				<Deimos>				
+				</satellite>
+				<satellite name="Deimos">				
 					<distance>23.46</distance>
 					<radius>6.2</radius>
 					<surface_area>0.000483</surface_area>
@@ -77,10 +77,10 @@
 					<link>
 						http://solarsystem.nasa.gov/planets/profile.cfm?Object=Mar_Deimos
 					</link>
-				</Deimos>
+				</satellite>
 			</subobjects>
-		</Mars>
-		<Jupiter id="381" slug="jupiter">
+		</planet>
+		<planet id="381" slug="jupiter" name="Jupiter">
 			<distance>778.6</distance>
 			<radius>69911</radius>
 			<surface_area>61418.7</surface_area>
@@ -88,8 +88,8 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Jupiter
 			</link>
-		</Jupiter>
-		<Saturn id="382" slug="saturn">
+		</planet>
+		<planet id="382" slug="saturn" name="Saturn">
 			<distance>1433.5</distance>
 			<radius>58232</radius>
 			<surface_area>42612</surface_area>
@@ -97,8 +97,8 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Saturn
 			</link>
-		</Saturn>
-		<Uranus id="383" slug="uranus">
+		</planet>
+		<planet id="383" slug="uranus" name="Uranus">
 			<distance>2872.5</distance>
 			<radius>25362</radius>
 			<surface_area>8083</surface_area>
@@ -106,8 +106,8 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Uranus
 			</link>
-		</Uranus>
-		<Neptune id="384" slug="neptune">
+		</planet>
+		<planet id="384" slug="neptune" name="Neptune">
 			<distance>4495.1</distance>
 			<radius>24622</radius>
 			<surface_area>7618</surface_area>
@@ -115,6 +115,6 @@
 			<link>
 				http://solarsystem.nasa.gov/planets/profile.cfm?Object=Neptune
 			</link>
-		</Neptune>
+		</planet>
 	</subobjects>
-</Solar_system>
+</solar_system>
