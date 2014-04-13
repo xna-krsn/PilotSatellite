@@ -4,20 +4,20 @@ using System.Xml;
 
 namespace DataManager
 {
-    class NasaDataKey
+    public class NasaDataKey
     {
         public string Id = string.Empty;
         public string Slug = string.Empty; 
     }
 
-    class CharacteristicOrders
+    public class CharacteristicOrders
     {
         public string MassOrder = string.Empty;
         public string AreaOrder = string.Empty;
         public string DistanceOrder = string.Empty;
     }
 
-    class CelestialBodyCharacteristics
+    public class CelestialBodyCharacteristics
     {
         public string Radius = string.Empty;
         public string Distance = string.Empty; //is empty for the sun, is relative to sun for planets and to planet for it's satellites
@@ -27,7 +27,7 @@ namespace DataManager
         public Dictionary<string, CelestialBodyCharacteristics> Subobjects = new Dictionary<string,CelestialBodyCharacteristics>();
     }
 
-    class SolarSystemDataManager
+    public class SolarSystemDataManager
     {
         public SolarSystemDataManager()
         {
